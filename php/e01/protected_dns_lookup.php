@@ -5,12 +5,12 @@ if (empty($_POST['hash_hmac']) || empty($_POST['domainname'])) {
 	exit;
 }
 
-$secret = getenv("SECRET");
+$key = getenv("SECRET");
 
 if (isset($_POST['nonce']))
-	$secret = hash_hmac('sha256', $_POST['nonce'], $secret);
+	$key = hash_hmac('sha256', $_POST['nonce'], $key);
 
-$hmac = hash_hmac('sha256', $_POST['domainname'], $secret);
+$hmac = hash_hmac('sha256', $_POST['domainname'], $key);
 
 if ($hmac !== $_POST['hash_hmac']) {
 	header('HTTP/1.0 403 Forbidden');
