@@ -2,16 +2,19 @@
 
 class Example1
 {
-    public $cache_file;
+    private $cache_file;
 
-    function __construct()
+    function __construct($cache_file)
     {
-        // some PHP code...
+        if (preg_match('/^[a-z]+$/', $cache_file)) {
+            throw new \http\Exception\InvalidArgumentException();
+        }
+        $this->cache_file = $cache_file;
     }
 
     function __destruct()
     {
-        $file = "/var/www/cache/tmp/{$this->cache_file}";
+        $file = "/var/cache/apache2/mod_cache_disk/{$this->cache_file}";
         if (file_exists($file)) @unlink($file);
     }
 }
