@@ -13,6 +13,11 @@ class Example2
     {
         if (isset($this->hook)) eval($this->hook);
     }
+
+    function __destruct() {
+        print "I will die now\n";
+        unset($this->hook);
+    }
 }
 
 // some PHP code...
