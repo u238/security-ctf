@@ -4,7 +4,7 @@ EXERCISE_TYPE=binary
 EXERCISE_NR=01
 EXERCISE=${EXERCISE_TYPE}-${EXERCISE_NR}
 
-all: bin image run-image
+all: image run-image
 .PHONY: all
 
 bin:
@@ -12,7 +12,7 @@ bin:
 image:
 	docker build -t ${EXERCISE} .
 run-image:
-	docker run -d --name ${EXERCISE} -e "SECRET=$(SECRET)" -p $(PORT):${PORT} ${EXERCISE}
+	docker run -it -d --name ${EXERCISE} -e "SECRET=$(SECRET)" -p $(PORT):${PORT} ${EXERCISE}
 clean:
 	docker rm -f ${EXERCISE}
 	docker rmi ${EXERCISE}
