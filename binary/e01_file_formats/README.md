@@ -3,7 +3,7 @@ File Formats
 
 ## Background Theory
 See `File Format` on wikipedia
-https://en.wikipedia.org/wiki/File\_format
+https://en.wikipedia.org/wiki/File_format
 
 ## Challange
 Craft a minimal file that will make the `file` output exactly like the following:
