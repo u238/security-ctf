@@ -5,7 +5,7 @@ File Formats
 See `File Format` on wikipedia
 https://en.wikipedia.org/wiki/File_format
 
-## Challange
+## Challenge
 Craft a minimal file that will make the `file` output exactly like the following:
 ```
 $ file /tmp/png.png

@@ -1,10 +1,17 @@
-Challange description
+Challenge description
 =====================
 
+## Background theory
+
+## Challenge
 Create a shellcode that brings the program to cat the flag!
 
-Commands cheatsheet
----------------
+## Rank criteria
+Ordered by priority:
+1. File size (smaller will win over bigger)
+2. Submission time (first that submits result will win) 
+
+## Commands cheatsheet
 
 #### disassemble binary shellcode
 ```
