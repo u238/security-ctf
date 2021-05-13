@@ -4,11 +4,12 @@
 
 
 int main(int argc, char **argv) {
+  setvbuf(stdout, NULL, _IONBF, 0);
   int foo_value = 0;
 
   unsigned char code[256]; // = "\xb8\x0a\x00\x00\x00\xc3";
 
-
+  printf("Input your function:\n");
   scanf("%s", &code);
 
   int (*foo)(int) = (int(*)())code;
