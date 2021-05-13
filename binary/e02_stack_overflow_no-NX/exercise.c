@@ -4,19 +4,19 @@
 #include <unistd.h>
 
 
-int askName(char * &name) {
+int askName(unsigned char name[]) {
     printf("Insert your name (and press ENTER):\n");
     int result = scanf("%s", name);
     return result;
 }
 
 int main(int argc, char **argv) {
-
+    setvbuf(stdout, NULL, _IONBF, 0);
     unsigned char name[256];
 
-    askName(&name);
+    askName(name);
 
-    printf("Wake up, %s ...\n");
+    printf("Wake up, %s ...\n", name);
     sleep(1);
     printf("The Matrix has you ...\n");
 }
