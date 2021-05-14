@@ -1,12 +1,14 @@
 Gdb debugging
 =============
 
+# Background theory
+* ELF Format (See https://en.wikipedia.org/wiki/Executable_and_Linkable_Format)
+* x86_64 GCC calling convention (See https://wiki.osdev.org/Calling_Conventions)
+* GDB basic commands (See https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf)
+
 # Preparation/Prerequisites
 * Gef installed (See https://gef.readthedocs.io/en/master/)
-
-# Background theory
-* x86_64 CPUs (See xxx)
-* GDB basic commands (See xxx)
+* Ask for the binary (I will compile it with the numbersAreValid implemented)
 
 # Challenge (+15 points)
 Find the valid input + submit flag
