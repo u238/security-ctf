@@ -4,7 +4,7 @@ FROM centos:7
 ARG FLAG
 COPY exercise.c Makefile /root/
 WORKDIR /root/
-RUN yum groupinstall "Development Tools" -y
+RUN yum install gcc make a -y
 RUN yum install socat -y
 RUN echo {$FLAG} > /flag
 RUN make bin
