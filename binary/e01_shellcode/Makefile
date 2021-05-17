@@ -1,7 +1,7 @@
 SECRET = "defaultsecret"
-PORT=4747
+PORT=4702
 EXERCISE_TYPE=binary
-EXERCISE_NR=01
+EXERCISE_NR=01_shellcode
 EXERCISE=${EXERCISE_TYPE}-${EXERCISE_NR}
 
 all: image run-image
@@ -10,7 +10,7 @@ all: image run-image
 bin:
 	gcc -Wl,-z,execstack -fno-stack-protector -z execstack exercise.c -o exercise
 image:
-	docker build -t ${EXERCISE} .
+	docker build -t ${EXERCISE} --build-arg "PORT=$(PORT)" --build-arg "SECRET=$(SECRET)" .
 run-image:
 	docker run -it -d --name ${EXERCISE} -e "SECRET=$(SECRET)" -p $(PORT):${PORT} ${EXERCISE}
 clean:
