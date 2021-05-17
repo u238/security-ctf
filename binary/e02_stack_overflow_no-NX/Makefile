@@ -1,7 +1,7 @@
 SECRET = "defaultsecret"
-PORT=4702
+PORT=4703
 EXERCISE_TYPE=binary
-EXERCISE_NR=02
+EXERCISE_NR=02-stack_no_nx
 EXERCISE=${EXERCISE_TYPE}-${EXERCISE_NR}
 
 all: image run-image

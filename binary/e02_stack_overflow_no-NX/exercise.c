@@ -4,6 +4,10 @@
 #include <unistd.h>
 
 
+int catFlag() {
+    system("/bin/cat /flag");
+}
+
 int askName(unsigned char name[]) {
     printf("Insert your name (and press ENTER):\n");
     int result = scanf("%s", name);

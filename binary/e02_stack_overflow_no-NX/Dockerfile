@@ -1,7 +1,7 @@
 ARG FLAG supersecret
 FROM centos:7
 ARG SECRET supersecret
-ARG PORT 4747
+ARG PORT 4703
 ARG FLAG
 ENV _PORT=${PORT}
 COPY exercise.c Makefile /root/
